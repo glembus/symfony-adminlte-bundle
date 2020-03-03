@@ -69,7 +69,7 @@ class BuildAssetsCommand extends Command
 
         if (!$this->filesystem->exists($this->package)) {
             $io->error('AdminLTE package should be installed first.');
-            exit;
+            return 1;
         }
 
         $this->processFiles("{$resource}public/styles/", $assets['css']);
@@ -82,6 +82,8 @@ class BuildAssetsCommand extends Command
         $this->processPlugins($assets['plugins'], "{$resource}public/plugins");
 
         $io->success('All assets were successfully installed into bundle directory.');
+        
+        return 0;
     }
 
     /**

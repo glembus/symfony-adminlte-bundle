@@ -75,7 +75,7 @@ _For Symfony 3.4 and higher next snippet should be added to `framework` section.
 
     framework:
         # ...
-        templating:
+        twig:
             engines: ['twig']
 
 #### Install Assets (run the following command):
